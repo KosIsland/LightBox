@@ -1,0 +1,80 @@
+/* LightBox *******************************************************************/
+/*! 
+    Modul LightBox 2022-02-21 */ 
+
+.lb {                                   /* Die LightBox (Hintergrund) */
+    display: none;                      /* Zunächst nicht sichtbar */
+    opacity: 0;                         /* Defaultmäßig durchsichtig */
+    position: fixed;                    /* Feste position */
+    z-index: 1001;                      /* Die lightBox liegt über dem restlichen Content */
+    left: 0;
+    top: 0;
+    width: 100%;                        /* Volle Breite */
+    height: 100%;                       /* Volle Höhe */
+    background-color: rgba(0,0,0,0.8);  /* Schwarz, leicht durchscheinend .. */
+    color: white;                       /* .. mit weißer Schrift */
+    transition: opacity 1s ease;        /* Ein- und Ausblenden über "opacity" */
+}
+
+.lb.displayBlock {                      /* Über "displayBlock" wird die Lightbox ein- und ausgeschaltet */
+    display: block;
+}
+
+.lb.opacity1 {                          /* Über "opacity1" wird die lightBox eingeblendet */
+    opacity: 1;
+}
+
+.lb button {                            /* Die Buttons der LightBox */
+    position: absolute;                 /* Positionierung in der LightBox */
+    z-index: 1002;                      /* Der Schließen-Button ist das oberste Element */
+    padding: 0;
+    color: inherit;                     /* irgendwie erforderlich */
+    background-color: grey;				/* Aussehen der Buttons */
+    border-radius: 0.5rem;
+    border: none;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.5s;           /* Die Buttons ein- und ausblenden */
+}
+
+.lb button:hover {                      /* Die Buttons beim Überfahren */
+    opacity: 1 !important; 
+}
+
+.lb button:focus {
+    outline: 3px solid lightgrey;
+}
+
+.lb button svg {                        /* svg-Icon der Buttons */
+    padding: 0;
+    height: 3em;
+    width: 3em;
+    vertical-align: bottom;
+}
+
+.lb button.close {                      /* Der Button zum Schließen der lightBox */
+    top: 0.5em;                         /* Position des Schließen-Button */
+    right: 0.5em;
+}
+
+.lb div.lbImage {
+    position: absolute;					/* Das Image-Tag ebenfalls fixieren */
+	top: 0;
+    width: 100%;                        /* Volle Breite */
+    height: 100%;                       /* Volle Höhe */
+    background-size: contain;           /* Das Bild responsiv im Hintergrund darstellen */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.lb div.lbCaption {
+    box-sizing: border-box;
+    position: absolute;					/* Positionieren der Bildunterschrift */
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;			/* Das Aussehen der Bildunterschrift */
+    opacity: 0.75;
+    padding: 0.25em 0.5em;
+    font-size: X-large;
+}
