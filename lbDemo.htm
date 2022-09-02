@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html lang='de'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport'                 content='width=device-width,minimum-scale=1,initial-scale=1'>
+  <title>lightBox Demo</title>
+  <link rel  = 'stylesheet' type='text/css' href='lightbox.min.css' />
+  <!-- link rel  ='stylesheet' type='text/css' href='lightbox.css' / -->
+  <style>
+    div#show { text-align: center; }    /* Den Inhalt zentrieren */
+    div#show a { color: inherit; }      /* Vererbt die Textfarbe an das Button-Element */
+    div#show button { 					/* Formate für die Buttons */
+        position: relative;             /* Positionierung  überschreiben */
+        font-size: 2rem;				/* Schriftgröße / Größe setzen */
+        padding: 0.25rem;				/* Innenabstand der Buttons */ 
+	}
+	
+	div#show img { width: 100%; }
+	
+	.bgColorWhite {
+        background-color: rgba(255, 255, 255, 0.8);  /* Weiß, leicht durchscheinend .. */
+        color: black;                   /* .. mit schwarzer Schrift */
+	}
+  </style>
+  <script async src='lightbox.min.js'></script>
+  <!-- script async src='lightbox.js'></script -->
+</head>
+
+<body> 
+    <h1>lightBox Demo 2022-09-02</h1>
+    <h2>show (LightBox mit eigenem Inhalt)</h2>
+    <button onclick='javascript:lb.show("show")'>show(anId)</button>
+    <div id='show' class='lb'>
+        <br /><br /><br /><br /><br />Dies ist ein Demo der Funktion "show"<br /><br />
+        Mit Klick auf den linken Button wird die Seite neu geladen,<br /><br />
+        mit Klick auf den rechten Button wird die lightBox geschlossen<br /><br />
+        <button onclick="window.open('lbDemo.htm', '_self')">Seite neu laden ...</button>
+		<button onclick="lb.hide()">LightBox schließen</button>
+		<br>
+		<br>
+		<img src="karte.png">
+    </div>
+
+    <h2>showLb</h2>
+    <button onclick='javascript:lb.showLb()'>showLb()</button>
+    <div id='lightBox' class='lb'>
+      <br /><br /><br /><br /><br />Dies ist ein Demo der Funktion "showLb"<br />
+	  Schließen mit [Esc]-Taste oder Mausclick auf den Schließen-Button.
+    </div>
+
+    <h2>showLb 2</h2>
+    <button onclick='javascript:lb.showLb("showLb2", {closeOnClick: true})'>showLb(anId, {closeOnClick: true})</button>
+    <div id='showLb2' class='lb' onscroll='console.log("div onscroll")'>
+	  <p>
+        <br /><br /><br /><br /><br />Dies ist ein Demo der Funktion "showLb"<br />
+	    Schließen mit [Esc]-Taste oder Mausclick auf die Fläche.
+      </p>
+    </div>
+
+    <h2>lbImage</h2>
+    <button onclick='javascript:lb.showLbImage("lbImage", "karte.png")'>showLbImage(anId, anImage)</button>
+    <div id='lbImage' class='lb'>
+      <p>Dies ist ein Demo der Funktion "showLbImage"</p>
+	  <p>Schließen mit [Esc]-Taste oder Mausclick auf den Schließen-Button.</p>
+    </div>
+
+    <h2>lbImage 2 (Weißer Hintergrund)</h2>
+    <button onclick='javascript:lb.showLbImage("lbImage2", "karte.png", {closeOnClick: true, closeButton: false})'>showLbImage(anId, anImage, {closeOnClick: true, closeButton: false})</button>
+    <div id='lbImage2' class='lb bgColorWhite'>
+      <p>Dies ist ein Demo der Funktion "showLbImage"</p>
+	  <p>Schließen nur mit [Esc]-Taste!</p>
+	  <p>Das Schließen mit Mausclick auf die Fläche funktioniert nicht, da das Image-Tag die LightBox überdeckt.</p>
+    </div>
+
+    <h2>lbFigure</h2>
+    <button onclick='javascript:lb.showLbFigure("lbFigure", "karte.png", "Bildunterschrift", {keyControl: false})'>showLbFigure (anId, anImage, figCaption, {keyControl: false})</button>
+    <div id='lbFigure' class='lb'>
+      <p>Dies ist ein Demo der Funktion "showLbFigure"</p>
+      <p>Hat der Schließen-Button den Focus, lösen [Leerzeichen] und [Return] das click-Ereignies aus.</p>
+      <p>Das Schließen mit [Esc] ist aber nicht möglich.
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    - ENDE -
+</body>
+
+</html>
