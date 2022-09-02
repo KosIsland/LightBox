@@ -63,13 +63,14 @@ The image gets displayed on the screen as large as possible, without being cropp
 not make sense to use small images together with the LightBox.
 
 ## Files in this Package
-Here you will find the following files:
+Here you will find the following files (in alphabetic order):
 ``````
-README.md           This file
 karte.png           Sample image file
+lbDemo.htm          A sample html file that shows use of LightBox module
 lightbox.css        The original css file, may be used for debug, if necessary
 lightbox.js         The original Javascript file, may be used for debug, if necessary
 lightbox.min.css    The css file for productive use
 lightbox.min.js     The Javascript file for productive use
 lightbox.zip        All above files as a zip file for download
+README.md           This file
 ``````
