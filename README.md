@@ -49,14 +49,14 @@ lb.getVersion ();                            // Get ModulVersion (option)
 ## Parameters
 The following parameters are passed:
 ``````
-anID:            type: String         The ID of the LightBox. The ID must be unique within the html document!
-anImage:         type: String         File name or url of an image that is displayed in the LightBox.
-anElement:       type: Object         Image object (tag) into which a caption is integrated
-aCaption:        type: String         A caption
-options:         type: Object         Options that can be used to modify the behavior of the LightBox.
-  closeButton:   type: Boolean          Display of the close button (true/false)
-  closeOnClick:  type: Boolean          Clicking into the area of the LightBox closes it (true/false)
-  keyControl:    type: Boolean          Keyboard monitoring (close with ESC key) (true/false)
+anID:            type: string         The ID of the LightBox. The ID must be unique within the html document!
+anImage:         type: string         File name or url of an image that is displayed in the LightBox.
+anElement:       type: object         Image object (tag) into which a caption is integrated
+aCaption:        type: string         A caption
+options:         type: object         Options that can be used to modify the behavior of the LightBox.
+  closeButton:   type: boolean          Display of the close button (true/false)
+  closeOnClick:  type: boolean          Clicking into the area of the LightBox closes it (true/false)
+  keyControl:    type: boolean          Keyboard monitoring (close with ESC key) (true/false)
 ``````
 ## Hint for use
 The image gets displayed on the screen as large as possible, without being cropped. Therefore it does 
