@@ -1,22 +1,35 @@
 # LightBox
 Javascript module, used to show text and pictures in a modal lightbox.
 
-The module requires the following structure in the html document:
+The module requires to include some additional elements within the html document:
 ``````
-1  <div id="anID" class="lb">
-2  </div>
-3  <button onclick='showLbFigure ("anID", "aPicture.jpg", "any text"); '>
-:      Show the picture
-:  </button>
+    <head>
+        :
+1       <link rel = 'stylesheet' type='text/css' href='lightbox.min.css' />
+        :
+2       <script async src='lightbox.min.js'></script>
+        :
+    </head>
+    <body>
+3       <div id="anID" class="lb">
+4       </div>
+5       <button onclick='showLbFigure ("anID", "aPicture.jpg", "any text"); '>
+:           Show the picture
+:       </button>
+    </body>
 ``````
-Element #1: The enclosing div tag of the class 'lb'. This is the LightBox element within the html document. Place this element near element #3 to make your code readable.
+Element #1: The appearance of the elements of the LightBox is controlled via classes, defined in the lightbox.css file.
 
-Element #2: The tag to close the LightBox. Place it immediately after element #1.
+Element #2: The Javascript LightBox module.
 
-Element #3: The Element containing the event handler to open the LightBox, a button or someting similar. Place it anywhere you need.
+Element #3: The enclosing div tag of the class 'lb'. This is the LightBox element within the html document. Place this element near element #5 to make your code readable.
 
-The appearance of the elements of the LightBox is controlled via classes, defined in the lightbox.css file.
+Element #4: The tag to close the LightBox. Place it immediately after element #3
 
+Element #5: The Element containing the event handler to open the LightBox, a button or something similar. Place it anywhere you need.
+
+
+## Functions of the LightBox module
 The LightBox module provides the following functions:
 ``````
 lb.init ();                                  // Initialization of variables (option)
@@ -33,6 +46,7 @@ lb.getScrollbarWidth ();                     // Get scrollbar width (option)
 lb.getVersion ();                            // Get ModulVersion (option)
 ``````
 
+## Parameters
 The following parameters are passed:
 ``````
 anID:            type: String         The ID of the LightBox. The ID must be unique within the html document!
@@ -44,5 +58,6 @@ options:         type: Object         Options that can be used to modify the beh
   closeOnClick:  type: Boolean          Clicking into the area of the LightBox closes it (true/false)
   keyControl:    type: Boolean          Keyboard monitoring (close with ESC key) (true/false)
 ``````
+## Hint for use
 The image gets displayed on the screen as large as possible, without being cropped. Therefore it does 
 not make sense to use small images together with the LightBox.
